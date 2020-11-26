@@ -32,10 +32,12 @@ public class StripeService {
 	
 	public Token getStripePaymentToken() throws StripeException {
 		Map<String, Object> card = new HashMap<String, Object>();
+		
 		card.put("number", stripeConfig.getCcNumber());
 		card.put("exp_month", stripeConfig.getExpiryMonth());
 		card.put("exp_year", stripeConfig.getExpiryYear());
 		card.put("cvc", stripeConfig.getCVC());
+		
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("card", card);
 

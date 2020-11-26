@@ -64,6 +64,9 @@ public class StripeController {
 		return "home";
 	}
 	
+	/*
+	 * Endpoint to charge the card thorugh Strip API.
+	 * */
 	@RequestMapping(value = StripeRestAPIConstants.CREATE_STRIPE_PAYMENT, method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
 	public @ResponseBody Charge charge(Locale locale, Model model) throws AuthenticationException, InvalidRequestException, ApiConnectionException, CardException, ApiException, StripeException {
 		
